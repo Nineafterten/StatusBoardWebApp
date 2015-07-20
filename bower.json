@@ -1,0 +1,20 @@
+{
+  "name": "StatusBoard",
+  "main": "app.js",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "*",
+    "bootstrap": "*",
+    "font-awesome": "*",
+    "jquery": "*",
+    "less.js": "*"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

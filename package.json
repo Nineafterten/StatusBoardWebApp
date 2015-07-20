@@ -1,0 +1,6 @@
+{
+  "appNameBase": "Status Board",
+  "version": "1.0.0",
+  "description": "A status board to track in office data",
+  "repository": "https://github.com/Nineafterten/StatusBoardWebApp"
+}
