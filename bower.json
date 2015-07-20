@@ -8,7 +8,7 @@
     "bootstrap": "*",
     "font-awesome": "*",
     "jquery": "*",
-    "less.js": "*"
+    "less": "*"
   },
   "ignore": [
     "**/.*",

@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #010101;
+  color: #ffffff;
+}
+.container {
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  border: 1px solid #efefef;
+}
+.widget {
+  margin-top: 20px;
+  border: 1px dashed #efefef;
+  height: 240px;
+}
