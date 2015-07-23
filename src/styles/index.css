@@ -12,7 +12,14 @@ body {
 }
 .widget {
   margin-top: 28.8px;
-  background-color: #efefef;
-  opacity: 0.25;
+  color: #ffffff;
+  background-color: #333333;
   height: 240px;
+}
+body .analog-clock {
+  display: block;
+  height: 200px;
+  width: 200px;
+  margin: auto;
+  text-align: center;
 }
