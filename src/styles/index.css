@@ -23,3 +23,6 @@ body .analog-clock {
   margin: auto;
   text-align: center;
 }
+body #donutchart {
+  margin-top: 30px;
+}

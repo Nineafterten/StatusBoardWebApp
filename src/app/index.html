@@ -16,7 +16,35 @@
                 </div>
             </div>
             <div class="col-sm-2">
-                <div class="widget"><i class="fa fa-rocket fa-2x"></i></div>
+                <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+                <script type="text/javascript">
+                  google.load("visualization", "1", {packages:["corechart"]});
+                  google.setOnLoadCallback(drawChart);
+                  function drawChart() {
+
+                    var data = google.visualization.arrayToDataTable([
+                      ['Task', 'Hours per Day'],
+                      ['Work',     11],
+                      ['Eat',      2],
+                      ['Commute',  2],
+                      ['Watch TV', 2],
+                      ['Sleep',    7]
+                    ]);
+
+                    var options = {
+                      title: 'My Daily Activities',
+                      pieHole: 0.4,
+                      backgroundColor: '#333333',
+                      titleTextStyle: { color: '#ffffff' },
+                      legendTextStyle: { color: '#ffffff' }
+                    };
+
+                    var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+
+                    chart.draw(data, options);
+                  }
+                </script>
+                <div id="donutchart" style="width: 300px; height: 240px;"></div>
             </div>
             <div class="col-sm-4">
                 <div class="widget">Hello</div>
