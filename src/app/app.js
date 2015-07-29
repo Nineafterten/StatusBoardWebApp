@@ -1,1 +1,1 @@
-var app = angular.module("statusBoardApp", []);
+var app = angular.module("statusBoardApp", ["announcements"]);

@@ -29,6 +29,7 @@ body .container .row div {
 }
 .widget {
   outline: 1px solid #333333;
+  overflow: hidden;
 }
 .widget-announcements {
   height: 170px;
@@ -46,4 +47,29 @@ body .container .row div {
 .widget-foosball-teams,
 .widget-foosball-live-game {
   height: 350px;
+}
+@keyframes marquee {
+  0% {
+    margin-left: 1080px;
+  }
+  100% {
+    margin-left: -1080px;
+  }
+}
+.announcements-content {
+  width: 100%;
+  height: 100%;
+  background-color: #333333;
+  overflow: hidden;
+}
+.announcements-content .scrolling-list {
+  width: 1080px;
+  margin: 0 auto;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  animation: marquee 30s linear infinite;
+}
+.announcements-content .scrolling-list div {
+  margin-top: 5.2rem;
 }

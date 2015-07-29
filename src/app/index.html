@@ -8,6 +8,7 @@
     <script type="text/javascript" src="../../bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="controller.js"></script>
+    <script type="text/javascript" src="./components/announcements/announcements.module.js"></script>
 </head>
 <body id="status-board-app" data-ng-controller="statusBoardAppController">
     <div class="container">
@@ -16,7 +17,7 @@
             <div class="col-sm-12">
                 <div class="widget widget-announcements">
                     <div class="app-header">L4</div>
-                    General Announcements
+                    <widget-announcements></widget-announcements>
                 </div>
             </div>
         </div>
