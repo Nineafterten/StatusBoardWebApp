@@ -6,90 +6,69 @@
     <title>Status Board</title>
     <link rel="stylesheet" type="text/css" href="../styles/index.css" />
 </head>
-<body>
+<body id="status-board-app">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-2">
-                <div class="widget">
-                    <canvas id="canvas" height="200" width="200" class="analog-clock"></canvas>
-                    <script type="text/javascript" src="./components/analog-clock/analog-clock.js"></script>
-                </div>
-            </div>
-            <div class="col-sm-2">
-                <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-                <script type="text/javascript">
-                  google.load("visualization", "1", {packages:["corechart"]});
-                  google.setOnLoadCallback(drawChart);
-                  function drawChart() {
-
-                    var data = google.visualization.arrayToDataTable([
-                      ['Task', 'Hours per Day'],
-                      ['Work',     11],
-                      ['Eat',      2],
-                      ['Commute',  2],
-                      ['Watch TV', 2],
-                      ['Sleep',    7]
-                    ]);
-
-                    var options = {
-                      title: 'My Daily Activities',
-                      pieHole: 0.4,
-                      backgroundColor: '#333333',
-                      titleTextStyle: { color: '#ffffff' },
-                      legendTextStyle: { color: '#ffffff' }
-                    };
-
-                    var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-
-                    chart.draw(data, options);
-                  }
-                </script>
-                <div id="donutchart" style="width: 300px; height: 240px;"></div>
-            </div>
-            <div class="col-sm-4">
-                <div class="widget">Hello</div>
-            </div>
-            <div class="col-sm-4">
-                <div class="widget">Yo</div>
+        <!-- orange header --> 
+        <div class="row ">
+            <div class="col-sm-12">
+                <div class="app-header">L4</div>
             </div>
         </div>
+        <!-- announcment bar --> 
         <div class="row">
-            <div class="col-sm-6">
-                <div class="widget">Woah</div>
-            </div>
-            <div class="col-sm-6">
-                <div class="widget">Sweet</div>
+            <div class="col-sm-12">
+                <div class="widget">General Announcements</div>
             </div>
         </div>
+        <!-- project list --> 
         <div class="row">
-            <div class="col-sm-2">
-                <div class="widget">Yes</div>
+            <div class="col-sm-12">
+                <div class="widget">Project List (Codenamed)</div>
             </div>
-            <div class="col-sm-6">
-                <div class="widget">No</div>
+        </div>
+        <!-- conference room availability --> 
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="widget">Conference Room Availablity</div>
+            </div>
+        </div>
+        <!-- calendar events --> 
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="widget">Calendar Events</div>
+            </div>
+        </div>
+        <!-- Commute data --> 
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="widget">Bus Schedule</div>
+            </div>
+            <div class="col-sm-8">
+                <div class="widget">Traffic Map</div>
+            </div>
+        </div>
+        <!-- Foosball data --> 
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="widget">Top Scorers</div>
             </div>
             <div class="col-sm-4">
-                <div class="widget">Maybe</div>
+                <div class="widget">Top Teams</div>
+            </div>
+            <div class="col-sm-4">
+                <div class="widget">Live Game</div>
             </div>
         </div>
+        <!-- bandwidth data --> 
         <div class="row">
-            <div class="col-sm-2">
-                <div class="widget">Dude</div>
+            <div class="col-sm-12">
+                <div class="widget">Bandwidth Graph</div>
             </div>
-            <div class="col-sm-2">
-                <div class="widget">Sweet</div>
-            </div>
-            <div class="col-sm-2">
-                <div class="widget">Really</div>
-            </div>
-            <div class="col-sm-2">
-                <div class="widget">Sure</div>
-            </div>
-            <div class="col-sm-2">
-                <div class="widget">Why</div>
-            </div>
-            <div class="col-sm-2">
-                <div class="widget">Not</div>
+        </div>
+        <!-- noise data --> 
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="widget">Noise Graph</div>
             </div>
         </div>
     </div>
