@@ -20,12 +20,14 @@
   padding: 0;
   background-color: #010101;
 }
+#status-board-app .container .row {
+  margin: 0;
+}
+#status-board-app .container .row div {
+  padding: 0;
+}
 #status-board-app .widget {
   color: #ffffff;
-  background-color: #333333;
   height: 240px;
-  outline: 1px solid orange;
-}
-#status-board-app .row {
-  margin-bottom: 0;
+  outline: 1px solid #333333;
 }

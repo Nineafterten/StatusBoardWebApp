@@ -26,18 +26,21 @@
         overflow: hidden;
         padding: 0;
         background-color: @p-black;
+
+        .row {
+            margin: 0;
+
+            div {
+                padding: 0;
+            }
+        }
     }
 
+    // temp class, each will be it's own component
     .widget {
         color: @p-white;
-        background-color: @p-dark-gray;
         height: @app-height / 8;
-        outline: 1px solid orange;
-    }
-
-    // bootstrap over-rides
-    .row {
-        margin-bottom: 0;
+        outline: 1px solid @p-dark-gray;
     }
 
 }
