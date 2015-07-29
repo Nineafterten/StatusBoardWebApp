@@ -1,17 +1,12 @@
 // app layout
-#status-board-app {
+body {
 
     margin: 0;
     padding: 0;
     background-color: @p-dark-gray;
     font-size: @app-font-size;
-    background: repeating-linear-gradient(
-      45deg,
-      @p-dark-gray,
-      @p-dark-gray 15px,
-      @p-mid-gray 15px,
-      @p-mid-gray 30px
-    );
+    color: @p-light-gray;
+    background: repeating-linear-gradient(45deg, @p-dark-gray, @p-dark-gray 15px, @p-mid-gray 15px, @p-mid-gray 30px);
 
     .app-header {
         background-color: @p-l4-orange;
@@ -35,12 +30,4 @@
             }
         }
     }
-
-    // temp class, each will be it's own component
-    .widget {
-        color: @p-white;
-        height: @app-height / 8;
-        outline: 1px solid @p-dark-gray;
-    }
-
 }

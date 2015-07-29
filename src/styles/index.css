@@ -1,33 +1,49 @@
 @import "../../bower_components/bootstrap/dist/css/bootstrap.min.css";
 @import "../../bower_components/font-awesome/css/font-awesome.min.css";
-#status-board-app {
+body {
   margin: 0;
   padding: 0;
   background-color: #333333;
   font-size: 2.6rem;
+  color: #efefef;
   background: repeating-linear-gradient(45deg, #333333, #333333 15px, #444444 15px, #444444 30px);
 }
-#status-board-app .app-header {
+body .app-header {
   background-color: #f16924;
   color: #ffffff;
   text-align: center;
   font-weight: bold;
 }
-#status-board-app .container {
+body .container {
   width: 1080px;
   height: 1920px;
   overflow: hidden;
   padding: 0;
   background-color: #010101;
 }
-#status-board-app .container .row {
+body .container .row {
   margin: 0;
 }
-#status-board-app .container .row div {
+body .container .row div {
   padding: 0;
 }
-#status-board-app .widget {
-  color: #ffffff;
-  height: 240px;
+.widget {
   outline: 1px solid #333333;
+}
+.widget-announcements {
+  height: 170px;
+}
+.widget-conference-rooms,
+.widget-calendar-events,
+.widget-bandwidth-data,
+.widget-noise-data {
+  height: 175px;
+}
+.widget-project-list,
+.widget-bus-schedule,
+.widget-traffic-map,
+.widget-foosball-scorers,
+.widget-foosball-teams,
+.widget-foosball-live-game {
+  height: 350px;
 }
