@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" data-ng-app="statusBoardApp">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>Status Board</title>
     <link rel="stylesheet" type="text/css" href="../styles/index.css" />
+    <script type="text/javascript" src="../../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="controller.js"></script>
 </head>
-<body id="status-board-app">
+<body id="status-board-app" data-ng-controller="statusBoardAppController">
     <div class="container">
         <!-- announcment bar --> 
         <div class="row">
