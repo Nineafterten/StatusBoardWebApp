@@ -4,7 +4,13 @@
   "description": "A status board to track in office data",
   "repository": "https://github.com/Nineafterten/StatusBoardWebApp",
   "devDependencies": {
-    "gulp-connect": "^2.2.0",
-    "gulp-less": "*"
+    "bower": "*",
+    "gulp": "*",
+    "gulp-concat": "*",
+    "gulp-connect": "*",
+    "gulp-less": "*",
+    "gulp-notify": "*",
+    "gulp-plumber": "*",
+    "gulp-sourcemaps": "*"
   }
 }
