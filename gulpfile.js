@@ -1,4 +1,6 @@
 var gulp =          require("gulp");
+var clean =         require("gulp-clean");
+var copy =          require("gulp-copy");
 var concat =        require("gulp-concat");
 var connect =       require("gulp-connect");
 var less =          require("gulp-less");
@@ -9,7 +11,9 @@ var sourcemaps =    require("gulp-sourcemaps");
 // connect to the local server
 gulp.task("connect", function() {
     connect.server({
-        livereload: true
+        root: "build",
+        livereload: true,
+        port: 7000
     });
 });
 
@@ -38,6 +42,10 @@ gulp.task("html", function () {
         "./src/app/**/*.html",
         "./src/app/**/**/*.html"
     ])
+    .pipe(plumber({
+        errorHandler: notify.onError("Html: <%= error.message %>")
+    }))
+    .pipe(gulp.dest('build/'))
     .pipe(connect.reload());
 });
 
@@ -55,7 +63,7 @@ gulp.task("styles", function () {
     .pipe(less("./src/styles/"))
     .pipe(concat("index.css"))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest("./src/styles/"))
+    .pipe(gulp.dest("build/"))
     .pipe(connect.reload());
 });
 
@@ -71,9 +79,28 @@ gulp.task("scripts", function() {
     .pipe(sourcemaps.init())
     .pipe(concat("index.js"))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest("./src/app/"))
+    .pipe(gulp.dest("build/"))
     .pipe(connect.reload());
 });
 
+gulp.task('copy', function() {
+    gulp.src([
+        './bower_components/**/*',
+        './node_modules/**/*'
+    ])
+    .pipe(plumber({
+        errorHandler: notify.onError("Copy: <%= error.message %>")
+    }))
+    .pipe(copy('build/'));
+});
+
+gulp.task('clean', function() {
+    gulp.src("build/")
+    .pipe(plumber({
+        errorHandler: notify.onError("Clean: <%= error.message %>")
+    }))
+    .pipe(clean());
+});
+
 // default task - connect and start watching
-gulp.task("default", ["connect", "watch"]);
+gulp.task("default", ["copy", "html", "styles", "scripts", "connect", "watch"]);

@@ -1,7 +1,6 @@
 @import "variables";
 
 body {
-
     margin: 0;
     padding: 0;
     background-color: @p-dark-gray;
@@ -20,6 +19,7 @@ body {
         width: @app-width;
         height: @app-height;
         overflow: hidden;
+        margin: 0;
         padding: 0;
         background-color: @p-black;
 
@@ -31,4 +31,9 @@ body {
             }
         }
     }
+}
+
+// for vertical tv layout
+body.layout-tv-vertical {
+    -webkit-transform: rotate(90deg);
 }
