@@ -1,12 +1,12 @@
-angular.module('projects', [])
+angular.module('foosball-scores', [])
 
-.controller('projectsController', ['$scope', function($scope) {
-    console.log('projectsController loaded');
+.controller('foosballScoresController', ['$scope', function($scope) {
+    console.log('foosballScoresController loaded');
 
 }])
 
-.directive('widgetProjects', function() {
+.directive('widgetFoosballScores', function() {
     return {
-        templateUrl: './components/projects/projects.html'
+        templateUrl: './components/foosball-scores/foosball-scores.html'
     };
 });

@@ -1,12 +1,12 @@
-angular.module('projects', [])
+angular.module('calendar', [])
 
-.controller('projectsController', ['$scope', function($scope) {
-    console.log('projectsController loaded');
+.controller('calendarController', ['$scope', function($scope) {
+    console.log('calendarController loaded');
 
 }])
 
-.directive('widgetProjects', function() {
+.directive('widgetCalendarEvents', function() {
     return {
-        templateUrl: './components/projects/projects.html'
+        templateUrl: './components/calendar/calendar.html'
     };
 });

@@ -1,12 +1,12 @@
-angular.module('projects', [])
+angular.module('conference-rooms', [])
 
-.controller('projectsController', ['$scope', function($scope) {
-    console.log('projectsController loaded');
+.controller('conferenceRoomsController', ['$scope', function($scope) {
+    console.log('conferenceRoomsController loaded');
 
 }])
 
-.directive('widgetProjects', function() {
+.directive('widgetConferenceRooms', function() {
     return {
-        templateUrl: './components/projects/projects.html'
+        templateUrl: './components/conference-rooms/conference-rooms.html'
     };
 });

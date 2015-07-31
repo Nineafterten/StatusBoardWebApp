@@ -1,12 +1,12 @@
-angular.module('projects', [])
+angular.module('noise', [])
 
-.controller('projectsController', ['$scope', function($scope) {
-    console.log('projectsController loaded');
+.controller('noiseController', ['$scope', function($scope) {
+    console.log('noiseController loaded');
 
 }])
 
-.directive('widgetProjects', function() {
+.directive('widgetNoise', function() {
     return {
-        templateUrl: './components/projects/projects.html'
+        templateUrl: './components/noise/noise.html'
     };
 });

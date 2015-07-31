@@ -1,12 +1,12 @@
-angular.module('projects', [])
+angular.module('traffic', [])
 
-.controller('projectsController', ['$scope', function($scope) {
-    console.log('projectsController loaded');
+.controller('trafficController', ['$scope', function($scope) {
+    console.log('trafficController loaded');
 
 }])
 
-.directive('widgetProjects', function() {
+.directive('widgetTraffic', function() {
     return {
-        templateUrl: './components/projects/projects.html'
+        templateUrl: './components/traffic/traffic.html'
     };
 });
