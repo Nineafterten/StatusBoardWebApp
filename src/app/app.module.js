@@ -1,5 +1,9 @@
-angular.module("statusBoardApp", ["announcements"])
-
+angular.module("statusBoardApp", [
+    "announcements",
+    "bandwidth",
+    "bus",
+    "projects"
+])
 .controller("statusBoardAppController", function($scope) {
-    console.log("Status Board controller loaded.");
+    console.log("statusBoardAppController loaded");
 });

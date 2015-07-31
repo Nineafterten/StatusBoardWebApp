@@ -19,7 +19,6 @@ body {
         width: @app-width;
         height: @app-height;
         overflow: hidden;
-        margin: 0;
         padding: 0;
         background-color: @p-black;
 
@@ -36,4 +35,10 @@ body {
 // for vertical tv layout
 body.layout-tv-vertical {
     -webkit-transform: rotate(90deg);
+
+    .container {
+        width: 720px;
+        height: 1280px;
+        margin: 0;
+    }
 }

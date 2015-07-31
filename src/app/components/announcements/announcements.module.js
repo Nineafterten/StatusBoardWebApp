@@ -1,7 +1,8 @@
 angular.module('announcements', [])
 
 .controller('announcementsController', ['$scope', function($scope) {
-
+    console.log('announcementsController loaded');
+    
     $scope.data = [
         {
             icon: 'fa-rocket',
