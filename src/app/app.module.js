@@ -11,6 +11,12 @@ angular.module("statusBoardApp", [
     "projects",
     "traffic"
 ])
+.factory('jquery', [
+    '$window',
+    function ($window) {
+        return $window.jQuery;
+    }
+])
 .controller("statusBoardAppController", function($scope) {
     console.log("statusBoardAppController loaded");
 });

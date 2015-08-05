@@ -1,9 +1,20 @@
 <div data-ng-controller="announcementsController" class="announcements-content">
     
-    <div class="scrolling-list">
-        <div data-ng-repeat="news in data">
-            <i class="fa {{news.icon}}"></i> {{news.message}}
+    <div id="newsContainer" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#newsContainer" data-ng-repeat="news in announcements track by $index" data-slide-to="$index" data- ng-class="{active : $first}"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item" data-ng-class="{active : $first}" data-ng-repeat="news in announcements track by $index">
+                <i class="fa fa-{{news.icon}}"></i>
+                {{news.message}}
+            </div>
         </div>
     </div>
 
+    <a class="left carousel-control" href="#newsContainer" role="button" data-slide="prev"></a>
+    <a class="right carousel-control" href="#newsContainer" role="button" data-slide="next"></a>
 </div>

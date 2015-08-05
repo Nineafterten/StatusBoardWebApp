@@ -71,7 +71,9 @@ gulp.task("styles", function () {
 gulp.task("scripts", function() {
     gulp.src([
         "./src/app/app.module.js",
-        "./src/app/components/**/*.js"
+        "./src/app/components/**/*.js",
+        "./bower_components/jquery/dist/jquery.min.js",
+        "./bower_components/bootstrap/dist/js/bootstrap.min.js"
     ])
     .pipe(plumber({
         errorHandler: notify.onError("Scripts: <%= error.message %>")
