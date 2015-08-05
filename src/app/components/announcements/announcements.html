@@ -1,18 +1,22 @@
 <div data-ng-controller="announcementsController" class="announcements-content">
-    
-    <div id="newsContainer" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#newsContainer" data-ng-repeat="news in announcements track by $index" data-slide-to="$index" data- ng-class="{active : $first}"></li>
-        </ol>
+    <div class="app-header">L4</div>
 
+    <div id="newsContainer" class="carousel slide" data-ride="carousel">
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
-            <div class="item" data-ng-class="{active : $first}" data-ng-repeat="news in announcements track by $index">
-                <i class="fa fa-{{news.icon}}"></i>
+            <div class="item" 
+                data-ng-class="{active : $first}"
+                data-ng-repeat="news in newsList track by $index"
+                data-ng-style="{{news.scaledFontSize}}"
+                >
+                <i class="fa fa-{{news.icon || 'bullhorn' }}"></i>
                 {{news.message}}
             </div>
         </div>
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#newsContainer" data-ng-repeat="news in newsList track by $index" data-slide-to="$index" data- ng-class="{active : $first}"></li>
+        </ol>
     </div>
 
     <a class="left carousel-control" href="#newsContainer" role="button" data-slide="prev"></a>

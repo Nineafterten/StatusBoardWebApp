@@ -1,47 +1,51 @@
 angular.module('announcements', [])
 
-.controller('announcementsController', ['jquery','$scope', '$timeout', function($, $scope, $timeout) {
+.controller('announcementsController', [
+    'lodash',
+    'jquery',
+    '$scope',
+    '$timeout',
+    function(
+        _,
+        $,
+        $scope,
+        $timeout
+    ) {
+
     console.log('announcementsController loaded');
+
+    // model for the UI
+    $scope.newsList = [];
 
     // local json data -- this will need to be moved to a central location to be easily edited
     var jsonData = [
     {
-        "message": "This messsage has no start date and should not load.",
-        "startDate": "",
-        "endDate": "8/15/2015",
-        "icon": "question-circle",
+        "message": "This messsage has an average amount of text for a new announcement.",
+        "icon": "question-circle"
     },
     {
-        "message": "This messsage has no end date and should be removed in two weeks.",
-        "startDate": "8/1/2015",
-        "endDate": "",
-        "icon": "cog",
+        "message": "This messsage small.",
+        "icon": "rocket"
     },
     {
-        "message": "This message has no icon but should load with a default icon instead.",
-        "startDate": "8/1/2015",
-        "endDate": "8/15/2015",
-        "icon": "",
-    },
-    {
-        "message": "This message should not load because it has negative dates.",
-        "startDate": "8/15/2015",
-        "endDate": "8/1/2015",
-        "icon": "map",
-    },
-    {
-        "message": "", // test no message case
-        "startDate": "8/1/2015",
-        "endDate": "8/15/2015",
-        "icon": "hand-lizard-o",
+        "message": "This messsage has a tremendous amount of text for a new announcement. This messsage has a tremendous amount of text for a new announcement. This messsage has a tremendous amount of text for a new announcement. This messsage has a tremendous amount of text for a new announcement.",
+        "icon": "map"
     }];
 
     // validate and adapt the messages correctly so the UI doesn't break with bad data entries
     var validateIncomingData = function() {
         if(jsonData) {
-            // this needs to have data checks before passing to the scope (dates validated, etc)
+            _.forEach(jsonData, function(item) {
+                // the item must have at least a message
+                if(item.message.length) {
+                    // then update the scaled font size
+                    item.scaledFontSize = "font-size:" + item.message.length + "px";
+
+                    // update the model
+                    $scope.newsList.push(item);
+                }
+            });
         }
-        $scope.announcements = jsonData;
     };
     validateIncomingData();
 

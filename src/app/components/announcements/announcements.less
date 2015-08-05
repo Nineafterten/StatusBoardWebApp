@@ -1,6 +1,9 @@
 @import "../../../styles/variables";
 
-@news-item-height: 170px;
+@header-height: 20%;
+@news-item-padding: 1%;
+@news-item-height: 100% - @header-height - @news-item-padding;
+@news-item-width: 100%;
 
 .announcements-content {
     position: relative;
@@ -9,22 +12,39 @@
     background-color: @p-dark-gray;
     overflow: visible;
 
+    .app-header {
+        background-color: @p-l4-orange;
+        color: @p-white;
+        text-align: center;
+        font-weight: bold;
+        font-size: @app-font-size * 0.9;
+        height: @header-height;
+    }
+
     #newsContainer {
 
         .item {
-            height: @news-item-height;
+            position: relative;
+            height: @news-item-height - @header-height;
+            width: @news-item-width;
             text-align: center;
+            vertical-align: top;
+            padding: @news-item-padding;
+            
         }
 
         .carousel-indicators {
-            position: relative;
+            position: absolute;
             padding:0;
-            bottom: 0;
             left:0;
+            right: @news-item-width;
+            top:0;
             margin-left:0;
             text-align: right;
             width: 100%;
-            padding-right: (@app-font-size / 2);
+            height: @header-height;
+            padding-right: @news-item-padding;
+            margin-bottom: 0;
 
             li {
                 border-color: @p-light-gray;
