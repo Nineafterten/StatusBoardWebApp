@@ -1,8 +1,8 @@
 @import "../../../styles/variables";
 
-@header-height: 20%;
+@header-height: @widget-half-height * 0.2;
 @news-item-padding: 1%;
-@news-item-height: 100% - @header-height - @news-item-padding;
+@news-item-height: @widget-half-height - @header-height;
 @news-item-width: 100%;
 
 .announcements-content {
@@ -25,12 +25,53 @@
 
         .item {
             position: relative;
-            height: @news-item-height - @header-height;
+            height: @news-item-height;
             width: @news-item-width;
-            text-align: center;
-            vertical-align: top;
-            padding: @news-item-padding;
-            
+            opacity: 0;
+
+            // just here for a demo, will be removed
+            .temp-count {
+                color: @p-yellow;
+                font-size: @app-font-size * 0.75;
+            }
+
+            .fa {
+                font-size: @app-font-size * 3.5;
+                float:left;
+                padding: @news-item-padding * 2;
+                isplay: table-cell; 
+                vertical-align: middle;
+                color: @p-l4-orange;
+            }
+
+            .short {
+                font-size: @app-font-size * 1.5;
+                display: table-cell; 
+                vertical-align: middle; 
+                height: @news-item-height;
+            }
+
+            .medium {
+                font-size: @app-font-size;
+                display: table-cell; 
+                vertical-align: middle; 
+                height: @news-item-height;
+                padding-right: @news-item-padding * 6;
+            }
+
+            .long {
+                font-size: @app-font-size * 0.75;
+                line-height: @app-font-size;
+                height: @news-item-height;
+                display: table-cell; 
+                vertical-align: middle; 
+                padding-right: @news-item-padding * 5;
+            }
+
+            &.active {
+                opacity: 1;
+                .animate(opacity);
+            }
         }
 
         .carousel-indicators {

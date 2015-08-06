@@ -1,53 +1,30 @@
 angular.module('announcements', [])
 
 .controller('announcementsController', [
-    'lodash',
     'jquery',
     '$scope',
-    '$timeout',
     function(
-        _,
         $,
-        $scope,
-        $timeout
+        $scope
     ) {
 
-    console.log('announcementsController loaded');
+    // NOTE - Eventually this will be loaded via a CMS or external source file.
 
     // model for the UI
-    $scope.newsList = [];
-
-    // local json data -- this will need to be moved to a central location to be easily edited
-    var jsonData = [
+    // -= Icons List Source: http://fortawesome.github.io/Font-Awesome/icons/ =-
+    $scope.newsData = [
     {
-        "message": "This messsage has an average amount of text for a new announcement.",
-        "icon": "question-circle"
+        "message": "This message has an average amount of text for a new announcement. This message has an average amount of text for a new announcement.",
+        "icon": "commenting"
     },
     {
-        "message": "This messsage small.",
+        "message": "This message is short and to the point.",
         "icon": "rocket"
     },
     {
-        "message": "This messsage has a tremendous amount of text for a new announcement. This messsage has a tremendous amount of text for a new announcement. This messsage has a tremendous amount of text for a new announcement. This messsage has a tremendous amount of text for a new announcement.",
-        "icon": "map"
+        "message": "This message has a long amount of text for a new announcement. This message has a long amount of text for a new announcement. This message has a long amount of text for a new announcement. This message has a long amount of text for a new announcement. This message has a long amount of text for a new announcement. This message has a long amount of text for a new announcement.",
+        "icon": "thumbs-up"
     }];
-
-    // validate and adapt the messages correctly so the UI doesn't break with bad data entries
-    var validateIncomingData = function() {
-        if(jsonData) {
-            _.forEach(jsonData, function(item) {
-                // the item must have at least a message
-                if(item.message.length) {
-                    // then update the scaled font size
-                    item.scaledFontSize = "font-size:" + item.message.length + "px";
-
-                    // update the model
-                    $scope.newsList.push(item);
-                }
-            });
-        }
-    };
-    validateIncomingData();
 
     // tell the carousel to go (this corrects the jquery/angular race condition)
     // -= UI Source: http://getbootstrap.com/javascript/#carousel =-

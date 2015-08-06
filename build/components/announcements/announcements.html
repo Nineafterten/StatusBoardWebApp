@@ -4,18 +4,33 @@
     <div id="newsContainer" class="carousel slide" data-ride="carousel">
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
-            <div class="item" 
+            <div class="item"
+                data-ng-if="news.message.length" 
                 data-ng-class="{active : $first}"
-                data-ng-repeat="news in newsList track by $index"
-                data-ng-style="{{news.scaledFontSize}}"
+                data-ng-repeat="news in newsData track by $index"
+                style="font-size:{{news.scaledFontSize}}px"
                 >
+                <!-- the icon on the left-->
                 <i class="fa fa-{{news.icon || 'bullhorn' }}"></i>
-                {{news.message}}
+                <!-- less than 50 characters -->
+                <span class="short" data-ng-if="news.message.length < 50">
+                    {{news.message}} 
+                    <span class="temp-count">({{news.message.length}})</span>
+                </span>
+                <!-- more than 50 characters but less than 150 -->
+                <span class="medium" data-ng-if="50 < news.message.length && news.message.length < 150">{{news.message}} 
+                    <span class="temp-count">({{news.message.length}})</span>
+                </span>
+                <!-- more than 150 characters -->
+                <span class="long" data-ng-if="news.message.length > 150">
+                    {{news.message}} 
+                    <span class="temp-count">({{news.message.length}})</span>
+                </span>
             </div>
         </div>
         <!-- Indicators -->
         <ol class="carousel-indicators">
-            <li data-target="#newsContainer" data-ng-repeat="news in newsList track by $index" data-slide-to="$index" data- ng-class="{active : $first}"></li>
+            <li data-target="#newsContainer" data-ng-repeat="news in newsData track by $index" data-slide-to="$index" data-ng-class="{active : $first}"></li>
         </ol>
     </div>
 
