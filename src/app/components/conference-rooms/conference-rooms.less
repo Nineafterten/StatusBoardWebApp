@@ -2,4 +2,54 @@
 
 .conference-rooms-content {
 
+    .rooms {
+        display: inline-block;
+        margin: 0.5%;
+
+        .room {
+            background-color: #1A1A1A;
+            border-radius: 8px;
+            margin: 0.5%;
+            width: 24%;
+            position: relative;
+            float: left;
+
+            .room-title {
+                float: left;
+                padding: 15px 20px;
+            }
+
+            .room-info {
+                float: right;
+                padding: 18px 0;
+                text-align: center;
+                width: 25%;
+                border-bottom-right-radius: 8px;
+                border-top-right-radius: 8px;
+                font-size: 32px;
+
+                .room-time {
+                    font-size: 32px;
+                    font-weight: bold;
+                    line-height: 20px;
+                }
+                .room-format {
+                    font-size: 15px;
+                    line-height: 0px;
+                    margin-top: 11px;
+                }
+
+                &.busy {
+                    background-color: @p-red;
+                }
+                &.soon {
+                    background-color: @p-orange;
+                }
+                &.free {
+                    background-color: @p-green;
+                }
+            }
+        }
+    }
+
 }

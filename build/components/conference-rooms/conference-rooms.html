@@ -1,5 +1,13 @@
 <div data-ng-controller="conferenceRoomsController" class="conference-rooms-content">
     
     <h2>Conference Rooms</h2>
-
+    <div id="authorize-div" style="display: none">
+        <span>Authorize access to Google Calendar API</span>
+        <!-- Button for the user to click to initiate auth sequence -->
+        <button id="authorize-button" ng-click="handleAuthClick(event)">
+            Authorize
+        </button>
+    </div>
+    <div id="rooms" class="rooms">
+    </div>
 </div>
