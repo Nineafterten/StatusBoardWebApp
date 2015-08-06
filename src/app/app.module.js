@@ -26,3 +26,7 @@ angular.module("statusBoardApp", [
 .controller("statusBoardAppController", function($scope) {
     console.log("statusBoardAppController loaded");
 });
+
+var init = function() {
+    setTimeout(function(){ window.checkAuth(); }, 200);
+};
