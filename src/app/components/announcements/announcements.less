@@ -19,6 +19,18 @@
         font-weight: bold;
         font-size: @app-font-size * 0.9;
         height: @header-height;
+
+        .l4-logo {
+            text-indent: -9999px;
+            display: block;
+            background-image:url("components/announcements/images/L4_Logo.svg");
+            background-repeat: no-repeat;
+            width: @app-font-size;
+            height: @header-height;
+            position: absolute;
+            left: 50%;
+            top: ((@header-height - @app-font-size) / 6);
+        }
     }
 
     #newsContainer {
@@ -79,7 +91,7 @@
             padding:0;
             left:0;
             right: @news-item-width;
-            top:0;
+            top: -@news-item-padding;
             margin-left:0;
             text-align: right;
             width: 100%;
@@ -88,7 +100,11 @@
             margin-bottom: 0;
 
             li {
-                border-color: @p-light-gray;
+                border: none;
+                margin-left: @app-font-size / 6 ;
+                background-color: @p-mid-gray;
+                height: @app-font-size / 3;
+                width: @app-font-size / 3;
 
                 &.active {
                     background-color: @p-white;

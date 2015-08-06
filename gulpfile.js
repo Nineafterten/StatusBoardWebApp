@@ -40,12 +40,16 @@ gulp.task("html", function () {
     gulp.src([
         "./src/app/*.html",
         "./src/app/**/*.html",
-        "./src/app/**/**/*.html"
+        "./src/app/**/**/*.html",
+        "./src/app/**/**/*.svg",
+        "./src/app/**/**/*.png",
+        "./src/app/**/**/*.jpg",
+        "./src/app/**/**/*.gif"
     ])
     .pipe(plumber({
         errorHandler: notify.onError("Html: <%= error.message %>")
     }))
-    .pipe(gulp.dest('build/'))
+    .pipe(gulp.dest("build/"))
     .pipe(connect.reload());
 });
 
@@ -86,18 +90,18 @@ gulp.task("scripts", function() {
     .pipe(connect.reload());
 });
 
-gulp.task('copy', function() {
+gulp.task("copy", function() {
     gulp.src([
-        './bower_components/**/*',
-        './node_modules/**/*'
+        "./bower_components/**/*",
+        "./node_modules/**/*"
     ])
     .pipe(plumber({
         errorHandler: notify.onError("Copy: <%= error.message %>")
     }))
-    .pipe(copy('build/'));
+    .pipe(copy("build/"));
 });
 
-gulp.task('clean', function() {
+gulp.task("clean", function() {
     gulp.src("build/")
     .pipe(plumber({
         errorHandler: notify.onError("Clean: <%= error.message %>")
