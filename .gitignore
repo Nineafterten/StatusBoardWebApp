@@ -3,5 +3,6 @@ bower_components/
 node_modules/
 npm-debug.log
 index.css
+index.js
 *.orig
 build/
