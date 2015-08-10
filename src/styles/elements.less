@@ -27,3 +27,52 @@
 .widget-foosball-live-game {
     height: @widget-base-height;
 }
+
+// temp under construction signs (can be removed after all widgets are started)
+.widget-foosball-scorers,
+.widget-foosball-teams,
+.widget-foosball-live-game,
+.widget-project-list,
+.widget-bus-schedule,
+.widget-traffic-map,
+.widget-calendar-events,
+.widget-bandwidth-data,
+.widget-noise-data {
+    display: block;
+    background: repeating-linear-gradient(45deg, @p-yellow, @p-yellow 15px, @p-dark-gray 15px, @p-dark-gray 30px);
+
+    .temp-content {
+        margin: @app-font-size;
+        border: 5px solid @p-dark-gray;
+        background-color: @p-mid-gray;
+        padding: @app-font-size * 2;
+        border-radius: 7px;
+        text-align: center;
+
+        .fa {
+            font-size: @app-font-size * 5;
+            margin: auto;
+            color: @p-light-gray;
+            margin: @app-font-size * 0.5;
+        }
+
+        span {
+            text-align: center;
+            display: block;
+            font-size: @app-font-size * 0.75;
+            margin-bottom: @app-font-size * 0.5;
+        }
+
+        &.horizontal {
+            .fa {
+                float:left;
+                font-size: @app-font-size * 3;
+                margin-top: @app-font-size * -1.85;
+            }
+            h2,
+            span {
+                margin-left: @app-font-size * 4;
+            }
+        }
+    }
+}
