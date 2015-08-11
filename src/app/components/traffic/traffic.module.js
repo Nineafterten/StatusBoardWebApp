@@ -46,7 +46,7 @@ angular.module('traffic', [])
       featureType: 'water',
       elementType: 'geometry',
       stylers: [
-        { color: '#336699' }
+        { color: '#006699' }
       ]
     },{
       featureType: 'road.highway',
