@@ -16,17 +16,15 @@
                 <i class="fa fa-{{news.icon || 'bullhorn' }}"></i>
                 <!-- less than 50 characters -->
                 <span class="short" data-ng-if="news.message.length < 50">
-                    {{news.message}} 
-                    <span class="temp-count">({{news.message.length}})</span>
+                    {{news.message}}
                 </span>
                 <!-- more than 50 characters but less than 150 -->
-                <span class="medium" data-ng-if="50 < news.message.length && news.message.length < 150">{{news.message}} 
-                    <span class="temp-count">({{news.message.length}})</span>
+                <span class="medium" data-ng-if="50 < news.message.length && news.message.length < 150">
+                    {{news.message}}
                 </span>
                 <!-- more than 150 characters -->
                 <span class="long" data-ng-if="news.message.length > 150">
-                    {{news.message}} 
-                    <span class="temp-count">({{news.message.length}})</span>
+                    {{news.message}}
                 </span>
             </div>
         </div>
