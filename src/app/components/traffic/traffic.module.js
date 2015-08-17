@@ -17,9 +17,7 @@ angular.module('traffic', [])
     {
       stylers: [
         { color: '#444444' },
-        { visibility: 'simplified' },
-        { gamma: 0.5 },
-        { weight: 0.5 }
+        { saturation: -20 }
       ]
     },
     {
@@ -32,15 +30,13 @@ angular.module('traffic', [])
       featureType: 'road.arterial',
       elementType: 'all',
       stylers: [
-        { color: '#cccccc' },
-        { visibility: 'simplified' }
+        { color: '#cccccc' }
       ]
     },{
       featureType: 'road.local',
       elementType: 'all',
       stylers: [
-        { color: '#999999' },
-        { visibility: 'simplified' }
+        { color: '#999999' }
       ]
     },{
       featureType: 'water',

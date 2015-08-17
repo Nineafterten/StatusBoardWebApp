@@ -2,7 +2,7 @@
 <html lang="en-us" data-ng-app="statusBoardApp">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Status Board</title>
     <!-- bower components -->
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
@@ -17,8 +17,11 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
 </head>
 
-<!-- <body id="status-board-app" class="layout-tv-vertical" data-ng-controller="statusBoardAppController"> -->
-<body ng-app="statusBoardApp" id="status-board-app" data-ng-controller="statusBoardAppController">
+<body id="status-board-app"
+    data-ng-app="statusBoardApp" 
+    data-ng-controller="statusBoardAppController"
+    class="layout-tv-vertical" 
+    >
     <div class="container">
         <!-- announcment bar --> 
         <div class="row">

@@ -9,13 +9,23 @@ angular.module('noise', [])
     google.setOnLoadCallback(drawChart);
 
       function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses'],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540]
-        ]);
+            var data = google.visualization.arrayToDataTable([
+                ['Day', 'Decibels'],
+                ['8/1',   40],
+                ['8/2',   36],
+                ['8/3',   31],
+                ['8/4',   42],
+                ['8/5',   40],
+                ['8/6',   22],
+                ['8/7',   21],
+                ['8/8',   34],
+                ['8/9',   27],
+                ['8/10',  44],
+                ['8/11',  39],
+                ['8/12',  38],
+                ['8/13',  23],
+                ['8/14',  24],
+            ]);
 
         var options = {
         backgroundColor: '#111111',
@@ -40,11 +50,6 @@ angular.module('noise', [])
         hAxis: {
             gridlines: {
                 count: 0
-            },
-            format: 'h:mm a',
-            viewWindow: {
-                min: [1, 0, 0],
-                max: [24, 0, 0]
             }
         },
         vAxis: {

@@ -1,6 +1,6 @@
 @import "../../../styles/variables";
 
-@header-height: @widget-half-height * 0.2;
+@header-height: @widget-half-height;
 @news-item-padding: 1%;
 @news-item-height: @widget-half-height - @header-height;
 @news-item-width: 100%;
@@ -18,7 +18,8 @@
         text-align: center;
         font-weight: bold;
         font-size: @app-font-size * 0.9;
-        height: @header-height;
+        display: inline-block;
+        position: relative;
 
         .l4-logo {
             text-indent: -9999px;
@@ -26,8 +27,6 @@
             background-image:url("components/announcements/images/L4_Logo.svg");
             background-repeat: no-repeat;
             width: @app-font-size;
-            height: @header-height;
-            position: absolute;
             left: 50%;
             top: ((@header-height - @app-font-size) / 6);
         }

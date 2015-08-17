@@ -3,17 +3,18 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: @p-dark-gray;
+    background-color: @p-light-gray;
     font-size: @app-font-size;
     color: @p-white;
-    background-color: @p-black;
+    height: @app-width;
+    width: @app-height;
 
     // NOTE - '.app-header' is part of components/announcements-widget
 
     .container {
-        width: @app-width;
-        height: @app-height;
-        overflow: hidden;
+        height: @app-width;
+        width: @app-height;
+        margin: 0;
         padding: 0;
         background-color: @p-black;
 
@@ -29,11 +30,22 @@ body {
 
 // for vertical tv layout
 body.layout-tv-vertical {
-    -webkit-transform: rotate(90deg);
+    -webkit-transform: translateY(-100%) rotate(90deg); /* Safari */
+    -moz-transform: translateY(-100%) rotate(90deg); /* Firefox 3.6 Firefox 4 */
+    /*-moz-transform-origin: right top; */
+    -ms-transform: translateY(-100%) rotate(90deg); /* IE9 */
+    -o-transform: translateY(-100%) rotate(90deg); /* Opera */
+    transform: translateY(-100%) rotate(90deg); /* W3C */  
+    -webkit-transform-origin: left bottom;
+    -moz-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    -o-transform-origin: left bottom;
+    transform-origin: left bottom;
+    width: @app-width;
+    height: @app-height;
 
     .container {
-        width: 720px;
-        height: 1280px;
-        margin: 0;
+        width: @app-width;
+        height: @app-height;
     }
 }
