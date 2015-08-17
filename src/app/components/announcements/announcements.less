@@ -1,6 +1,6 @@
 @import "../../../styles/variables";
 
-@header-height: @widget-half-height;
+@header-height: @widget-base-height * 0.1;
 @news-item-padding: 1%;
 @news-item-height: @widget-half-height - @header-height;
 @news-item-width: 100%;
@@ -8,7 +8,7 @@
 .announcements-content {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: @widget-base-height;
     background-color: @p-dark-gray;
     overflow: visible;
 
@@ -18,7 +18,7 @@
         text-align: center;
         font-weight: bold;
         font-size: @app-font-size * 0.9;
-        display: inline-block;
+        height: @header-height;
         position: relative;
 
         .l4-logo {
@@ -27,8 +27,9 @@
             background-image:url("components/announcements/images/L4_Logo.svg");
             background-repeat: no-repeat;
             width: @app-font-size;
+            position: absolute;
             left: 50%;
-            top: ((@header-height - @app-font-size) / 6);
+            top: @widget-base-height * 0.016;
         }
     }
 
@@ -49,7 +50,7 @@
             .fa {
                 font-size: @app-font-size * 3.5;
                 float:left;
-                padding: @news-item-padding * 2;
+                padding: @news-item-padding * 1.25 @news-item-padding * 2;
                 isplay: table-cell; 
                 vertical-align: middle;
                 color: @p-l4-orange;
@@ -110,5 +111,10 @@
                 }
             }
         }
+
+    }
+
+    a.carousel-control {
+        display: none;
     }
 }
